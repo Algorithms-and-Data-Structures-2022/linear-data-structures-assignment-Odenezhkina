@@ -23,12 +23,17 @@ namespace assignment {
 
   bool LinkedQueue::Dequeue() {
     // Write your code here ...
-    if (IsEmpty()){
+    if (IsEmpty()) {
       return false;
+    }
+    if(size_ == 1){
+      Clear();
+      return true;
     }
     Node* node = front_;
     front_ = nullptr;
     front_ = node->next;
+    size_--;
     return true;
   }
 
