@@ -26,10 +26,9 @@ namespace assignment {
     if (IsEmpty()){
       return false;
     }
-    for (Node* i = 0; i->next != nullptr ; i++) {
-      delete i;
-      size_--;
-    }
+    Node* node = front_;
+    front_ = nullptr;
+    front_ = node->next;
     return true;
   }
 
